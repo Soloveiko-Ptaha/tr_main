@@ -29,6 +29,8 @@ body {
 }
 .search__input_field-search {
 	border: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #515151;
 	font: 400 17px/17px 'Lato', sans-serif;
@@ -48,31 +50,49 @@ body {
 	padding: 0;
 	width: 38px;
 }
+
 /*Banner*/
+.slider {
+	width: 100%;
+}
+.slick-dots {
+	left: -999px;
+	position: absolute;
+}
+.slick-dots li{
+	display: inline-block;
+	padding-left: 20px;
+}
+.slick-dots button {
+	background: #fff;
+	border: 2px solid #f75f6a;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 10px;
+	height: 15px;
+	outline: none;
+	width: 15px;
+}
 .banner {
-	align-content: stretch;
-	display: flex;
-	flex-direction: row;
-	height: 884px;
+	height: 880px;
 	overflow: hidden;
+	width: 100%;
 }
 .banner__slider {
-	background: url(../img/banner.jpg);
-	background-size: cover;
 	color: #e4f4f8;
-	display: inline-block;
+	float: left;
 	font-weight: 700;
 	position: relative;
-	width: 63.4375%;
+	width: 63.5%;
 }
 .banner__slider_img {
-	height: 100%;
-	width: 100%
+	min-height: 880px;
+	width: 100%;
 }
 .banner__slider_like {
 	border-bottom: 1px solid #e4f4f8;
 	font-size: 20px;
-	left: 82.3%;
+	right: 85px;
 	padding-bottom: 12px;
 	position: absolute;
 	top: 98px;
@@ -90,10 +110,10 @@ body {
 }
 .banner__slider_name {
 	font-size: 37px;
-	left: 60%;
+	right: 85px;
 	position: absolute;
 	text-align: right;
-	top: 83.7%;
+	bottom: 15%;
 	width: 305px;
 }
 .banner__slider_name p {
@@ -112,15 +132,18 @@ body {
 	-moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #f75f6a; 
 	height: 57px;
-	position: absolute;
 	right: -29px;
+	position: absolute;
 	text-align: center;
 	text-decoration: none;
 	top: 85px;
 	width: 57px;
+	z-index: 100;
 }
 .banner__heart_link:hover {
 	background: #464e5e;
@@ -134,17 +157,17 @@ body {
 	padding-top: 18px;
 }
 .banner__deskription {
-	align-content: stretch;
 	color: #fff;
-	display: flex;
-	flex-direction: column;
-	width: 36.5625%;
-	display: inline-block;
+	margin-left: 63.5%;
+	width: 100%;
 }
 .banner__characteristics {
 	background: #f75f6a;
+	height: 40%;
 	padding: 85px;
-	padding-right: 0;
+}
+.slick-slide .banner__characteristics  img {
+	display: inline-block;
 }
 .banner__characteristics_img {
 	vertical-align: top;
@@ -162,10 +185,12 @@ body {
 }
 .banner__test-drive {
 	background: #1f2538;
-	height: 100%;
+	height: 60%;
 	padding: 80px 0 85px 75px;
 }
 .banner__test-drive_wrap {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 331px;
 }
@@ -228,6 +253,8 @@ body {
 	-moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #f75f6a;
 	height: 50px;
@@ -266,7 +293,7 @@ body {
 	-o-transition: background .3s ease-in-out;
 	transition: background .3s ease-in-out;
 }
- .banner__test-drive_li:hover .hint {
+.banner__test-drive_li:hover .hint {
 	display: block;
 }
 .banner__test-drive_li:hover .hint:before {
@@ -302,6 +329,13 @@ body {
 	-o-transition: background .3s ease-in-out;
 	transition: background .3s ease-in-out;
 }
+.clear-fix:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+}
 
 /*filter*/
 .selection {
@@ -314,8 +348,31 @@ body {
 	justify-content: space-around;
 	padding: 75px 0;
 }
+.selection__form_input-sallary {
+	position: relative;
+}
 .selection__form_input-wrap {
 	display: inline-block;
+}
+.selection__form_input-sallary:before {
+	background: url(../img/right.png) no-repeat;
+	content: "";
+	display: block;
+	height: 24px;
+	left: -60px;
+	position: absolute;
+	top: 30px;
+	width: 15px;
+}
+.selection__form_input-sallary:after {
+	background: url(../img/right.png) no-repeat;
+	content: "";
+	display: block;
+	height: 24px;
+	right: -60px;
+	position: absolute;
+	top: 30px;
+	width: 15px;
 }
 .selection__form_location {
 	padding-right: 15px;
@@ -387,6 +444,8 @@ input[type='number']::-webkit-outer-spin-button {
 	-moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #fff;
 	font: 400 14px/14px 'lato', sans-serif;
@@ -463,6 +522,7 @@ input[type='number']::-webkit-outer-spin-button {
 .filter__category_list li:hover .filter__category_link:after {
 	display: block;
 }
+
 /*cars*/
 .cars {
 	align-items: stretch;
@@ -487,6 +547,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 .car__block {
 	border: 1px solid #c5c5c5;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
@@ -497,6 +559,7 @@ input[type='number']::-webkit-outer-spin-button {
 .car__content_acura {
 	flex-basis: 50%;
 	height: 350px;
+	
 }
 .car__content_opel,
 .car__content_shevrole,
@@ -529,12 +592,37 @@ input[type='number']::-webkit-outer-spin-button {
 .car__block img {
 	vertical-align: middle;
 }
+.logo_tesla,
+.logo_acura {
+	height: auto;
+	width: 140px;
+}
+.logo_opel,
+.logo_shevrole,
+.logo_peugeot {
+	height: auto;
+	width: 85px;
+}
+.logo_bmw,
+.logo_volvo,
+.logo_skoda,
+.logo_mazda {
+	height: auto;
+	width: 80px;
+}
+.logo_mitshubishi,
+.logo_reno,
+.logo_honda {
+	height: auto;
+	width: 40px;
+}
 .car__block_list {
 	border-left: 1px solid #c5c5c5;
 	color: #636b84;
 	display: inline-block;
 	font: 700 16px/16px 'Lato', sans-serif;
 	list-style: none;
+	margin: 0;
 	margin-left: 10%;
 	padding: 20px 0 20px 14px;
 	vertical-align: middle;
@@ -671,6 +759,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 .popap__block_queue {
 	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0;
 	padding-left: 28px;
@@ -722,6 +812,8 @@ input[type='number']::-webkit-outer-spin-button {
 	-moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #2e395b;
 	font-size: 14px;
@@ -741,6 +833,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 .popap__calendar li {
 	border: 1px solid #cdd0d7;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	display: inline-block;
 	height: 115px;
@@ -821,7 +915,9 @@ input[type='number']::-webkit-outer-spin-button {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     border: 9px solid #f75f6a;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	display: block;
 	height: 55px;
 	left: 0;
@@ -857,7 +953,9 @@ input[type='number']::-webkit-outer-spin-button {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     border: 10px solid rgba(255, 255, 255, .7)
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	height: 80px;
 	left: 0;
 	position: relative;
@@ -933,7 +1031,9 @@ input[type='number']::-webkit-outer-spin-button {
 	-moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	color: #fff;
 	font-size: 14px;
 	height: 19px;
@@ -950,20 +1050,29 @@ input[type='number']::-webkit-outer-spin-button {
 	}
 }
 @media all and (max-width: 1265px) {
-	.car__block >img {
+	.logo_tesla,
+	.logo_acura {
 		height: auto;
-		width: 60px;
+		width: 130px;
 	}
-	.car__content_tesla >img,
-	.car__content_acura >img {
+	.logo_opel,
+	.logo_shevrole,
+	.logo_peugeot {
 		height: auto;
-		width: 99px;
+		width: 70px;
 	}
-	.car__content_mitshubishi >img,
-	.car__content_reno >img,
-	.car__content_honda >img {
+	.logo_bmw,
+	.logo_volvo,
+	.logo_skoda,
+	.logo_mazda {
 		height: auto;
-		width: 29px;
+		width: 70px;
+	}
+	.logo_mitshubishi,
+	.logo_reno,
+	.logo_honda {
+		height: auto;
+		width: 37px;
 	}
 	.user-menu__settings {
 		margin: 0 50px;
@@ -973,6 +1082,44 @@ input[type='number']::-webkit-outer-spin-button {
 	}
 }
 @media all and (max-width: 1190px) {
+	.banner {
+		height: 530px;
+	}
+	.banner__slider {
+		height: 530px;
+		overflow: hidden;
+		width: 43.5%;
+	}
+	.banner__slider_img {
+		min-height: 530px;
+		width: 585px;
+	}
+	.banner__slider_like {
+		left: 46px;
+		top: 28px;
+		width: 67px;
+	}
+	.banner__heart_link {
+		left: 150px;
+		top: 20px;
+	}
+	.banner__deskription {
+		margin-left: 43.5%;
+	}
+	.banner__characteristics {
+		padding: 10px 0 10px 85px;
+	}
+	.banner__characteristics_list ul{
+		font-size: 14px;
+		padding-left: 15px;
+	}
+	.banner__test-drive {
+		padding: 10px 0 25px 85px;
+	}
+	.banner__test-drive_h3 {
+		font-size: 22px;
+		padding-bottom: 10px;
+	}
 	.selection__form {
 		flex-wrap: wrap;
 		padding: 25px 25px;
@@ -981,14 +1128,50 @@ input[type='number']::-webkit-outer-spin-button {
 	.selection__form_input-sallary input[type='number'] {
     	margin-bottom: 25px;
 	}
+	.selection__form_input-sallary:before,
+	.selection__form_input-sallary:after {
+		display: none;
+	}
 	.filter__category_list {
 		width: 60%;
 	}
 	.car__block_list {
 		margin-left: 3%;
 	}
+	.logo_tesla,
+	.logo_acura {
+		height: auto;
+		width: 120px;
+	}
+	.logo_opel,
+	.logo_shevrole,
+	.logo_peugeot {
+		height: auto;
+		width: 55px;
+	}
+	.logo_bmw,
+	.logo_volvo,
+	.logo_skoda,
+	.logo_mazda {
+		height: auto;
+		width: 55px;
+	}
+	.logo_mitshubishi,
+	.logo_reno,
+	.logo_honda {
+		height: auto;
+		width: 30px;
+	}
 }
 @media all and (max-width: 1096px) {
+	.selection__form_input-sallary:before {
+		display: block;
+		left: -30px;
+	}
+	.selection__form_input-sallary:after {
+		display: block;
+		right: -30px;
+	}
 	.cars {
 	display: block;
 	height: 100%;
@@ -1000,6 +1183,31 @@ input[type='number']::-webkit-outer-spin-button {
 	.car__block_list {
 		margin-left: 10%;
 	}
+	.logo_tesla,
+	.logo_acura {
+		height: auto;
+		width: 140px;
+	}
+	.logo_opel,
+	.logo_shevrole,
+	.logo_peugeot {
+		height: auto;
+		width: 100px;
+	}
+	.logo_bmw,
+	.logo_volvo,
+	.logo_skoda,
+	.logo_mazda {
+		height: auto;
+		width: 130px;
+	}
+	.logo_mitshubishi,
+	.logo_reno,
+	.logo_honda {
+		height: auto;
+		width: 80px;
+	}
+}	
 @media all and (max-width: 1024px) {
 	.header {
 		justify-content: space-around;
@@ -1010,8 +1218,16 @@ input[type='number']::-webkit-outer-spin-button {
 	.search__input_field-search {
 		width: 157px;
 	}
+	.banner__slider_name {
+		font-size: 20px;
+		left: -130px;
+		top: 415px;
+	}
+	.banner__slider_price {
+		font-size: 12px;
+	}
 	.filter__category_list {
-		width: 70%;
+		width: 72%;
 	}
 	.scheme__wrap {
 		margin: 0 auto;
@@ -1020,6 +1236,12 @@ input[type='number']::-webkit-outer-spin-button {
 	.scheme__wrap img {
 		height: auto;
 		width: 100%;
+	}
+	.logo_opel,
+	.logo_shevrole,
+	.logo_peugeot {
+		height: auto;
+		width: 70px;
 	}
 	.popap {
 		top: 200px;
@@ -1034,14 +1256,107 @@ input[type='number']::-webkit-outer-spin-button {
 	}
 }	
 @media all and (max-width: 768px) {
+	.banner {
+		height: 230px;
+	}
+	.banner__slider {
+		height: 230px;
+		overflow: hidden;
+		width: 25%;
+		min-width: 270px;
+	}
+	.banner__slider_img {
+		min-height: 230px;
+		width: 215px;
+	}
+	.banner__slider_name {
+		font-size: 18px;
+		left: -130px;
+		top: 180px;
+	}
+	.banner__slider_like {
+		left: 10px;
+		top: 18px;
+		/*width: 67px;*/
+	}
+	.banner__heart_link {
+		left: 90px;
+		top: 2px;
+	}
+	.banner__deskription {
+		margin-left: 25%;
+	}
+	.banner__characteristics {
+		height: 230px;
+		padding: 40px 0 10px 25px;
+		vertical-align: top;
+	}
+	.banner__characteristics_img {
+		padding-left: 5px;
+	}
+	.banner__characteristics_list {
+		font-size: 14px;
+		margin: 0;
+	}
+	.banner__test-drive {
+		display: none;
+		padding: 10px 0 15px 15px;
+	}
+	.banner__test-drive_h3 {
+		font-size: 18px;
+	}
+	.cars {
+		height: 590px;
+	}
+	.cars__blok_left,
+	.cars__blok_right {
+		height: 250px;
+	}
+	.car__content_tesla,
+	.car__content_acura {
+		height: 150px;
+	}
+	.car__content_opel,
+	.car__content_shevrole,
+	.car__content_peugeot,
+	.car__content_mitshubishi,
+	.car__content_reno,
+	.car__content_honda  {
+		height: 100px;
+	}
+	.car__content_bmw,
+	.car__content_volvo,
+	.car__content_skoda,
+	.car__content_mazda {
+		height: 120px;
+	}
 	.car__block_list {
 		margin-left: 3%;
+		padding: 5px 0 5px 10px;
 	}
-	.car__content_opel >img,
-	.car__content_shevrole >img,
-	.car__content_peugeot >img {
+	.logo_tesla,
+	.logo_acura {
 		height: auto;
-		width: 21%;
+		width: 100px;
+	}
+	.logo_opel,
+	.logo_shevrole,
+	.logo_peugeot {
+		height: auto;
+		width: 40px;
+	}
+	.logo_bmw,
+	.logo_volvo,
+	.logo_skoda,
+	.logo_mazda {
+		height: auto;
+		width: 85px;
+	}
+	.logo_mitshubishi,
+	.logo_reno,
+	.logo_honda {
+		height: auto;
+		width: 55px;
 	}
 	.scheme__text {
 		width: 90%;
@@ -1059,59 +1374,103 @@ input[type='number']::-webkit-outer-spin-button {
 	.popap__block_queue .fa-times {
 		right: 4px;
 	}
+	.user-menu__welkom {
+		padding-right: 20px;
+	}
+	.user-menu__mediaicons a,
+	.user-menu__calendar a {
+		line-height: 35px;
+	}
 }
 @media all and (max-width: 600px) {
 	.header {
-		justify-content: space-between;
+		justify-content: space-around;
 	}	
+	.header__logo,
+	.search {
+		margin: 0;
+	}
+	.banner__characteristics {
+		height: 230px;
+		padding: 10px 0;
+		vertical-align: top;
+	}
+	.banner__characteristics_list {
+		display: block;
+		font-size: 12px;
+		margin: 0;
+	}
+	.banner__characteristics_list li {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.selection {
+		width: 100%;
+	}
+	.selection__form {
+		flex-direction: column;
+		padding: 10px 0 25px;
+
+	}
+	.selection__form_location {
+		padding-right: 0;
+		text-align: center;
+	}
+	.selection__form_link {
+		padding: 0;
+		text-align: center;
+	}
+	.selection__form_input-sallary {
+		  margin: 0;
+		  text-align: center;
+	}
+	.selection__form_input-sallary span {
+		display: block;
+		margin-bottom: 14px;
+		text-align: center;
+	}
+	.selection__form_button {
+		margin: 0 auto;
+	}
 	.filter__category_list {
 		width: 100%;
 	}
 	.user-menu {
 		height: 175px;
 	}
+	.cars {
+		height: 1440px;
+	}
 	.cars__blok_left,
 	.cars__blok_right {
 		display: block;
 		width: 100%;
-		height: auto;
-	}
-	.car__content_tesla,
-	.car__content_acura, 
-	.car__content_opel,
-	.car__content_shevrole,
-	.car__content_peugeot,
-	.car__content_bmw,
-	.car__content_volvo,
-	.car__content_skoda,
-	.car__content_mazda {
-		border: none;
-		display: inline-block;
-		height: 150px;
-		/*margin-left: -.29%;*/
-		width: 100%;
+		height: 600px;
 	}
 	.car__content_mitshubishi,
 	.car__content_reno,
 	.car__content_honda {
-		border: none;
+		padding-right: 38px;
+	}
+	.car__block {
 		display: inline-block;
 		height: 120px;
-		/*margin-left: -.35%;*/
 		width: 100%;
 	}
 	.car__block >img {
 		height: auto;
-		width: 20%;
-	}
-	.car__content_mitshubishi >img,
-	.car__content_reno >img,
-	.car__content_honda >img {
-		height: auto;
-		width: 15%;
+		width: 80px;
 	}
 	.car__block_list {
 		margin-left: 15%;
+		padding-left: 20px;
+	}
+	.scheme__wrap {
+		padding-bottom: 65px;
+	}
+	.scheme__h3 {
+		font-size: 35px;
+		padding-top: 75px;
 	}
 	.popap {
 		width: 320px;
@@ -1181,8 +1540,35 @@ input[type='number']::-webkit-outer-spin-button {
 		display: block;
 		font: 700 33px/33px 'Lato', sans-serif;
 	}
+	/*.user-menu__mediaicons a,
+	.user-menu__calendar a {
+		line-height: 35px;
+	}*/
 }
-@media all and (max-width: 320px) {
+@media all and (max-width: 480px) {
+	.header {
+		align-items: center;
+		flex-direction: column;
+	}	
+	.header__logo {
+		margin-bottom: 20px;
+	}
+	.banner__slider {
+		min-width: 175px;
+	}
+		
+	.banner__characteristics {
+		padding-left: 30%;
+	}
+	.banner__characteristics_list ul{
+		font-size: 10px;
+		padding-top: 10px;
+	}
+	
+	.filter__category_list li {
+		padding: 0;
+		margin: 10px 7%;
+	}
 	.popap {
 		top: 0px;
 	}
@@ -1201,6 +1587,9 @@ input[type='number']::-webkit-outer-spin-button {
 		line-height: 12px;
 		height: 30px;
 		width: 150px;
+	}
+	.footer__nav_list {
+		margin: 0 20px;
 	}
 	.user-menu__settings {
 		margin: 0 7px;
